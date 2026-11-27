@@ -129,3 +129,5 @@ Durante o desenvolvimento foram utilizados:
 O projeto demonstra a aplicação dos conceitos fundamentais da linguagem C na construção de um sistema de gerenciamento de atendimentos.
 
 A divisão do código em módulos facilita a organização, manutenção e compreensão do programa.
+#desenvolvido por
+Yago Fernandes de Almeida
