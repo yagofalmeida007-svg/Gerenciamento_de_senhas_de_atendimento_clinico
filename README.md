@@ -1,1 +1,1 @@
-# Sistema_de_gerenciamento_de_senhas_de_atendimento_cl-nico
+# Sistema_de_gerenciamento_de_senhas_de_atendimento_clinico
