@@ -58,7 +58,119 @@ A ordem de atendimento segue a seguinte prioridade:
 
 Dentro de cada categoria, os pacientes são atendidos na ordem em que foram cadastrados (FIFO).
 
-## 5. Estrutura dos arquivos
+## 5. Exemplo de funcionamento
+
+### Exemplo 1 — Cadastro de paciente normal
+
+**Entrada:**
+```text
+Genero (M/F/O): M
+Idade: 30
+Possui necessidade especial? (1-Sim / 0-Nao): 0
+Possui condicao de obesidade? (1-Sim / 0-Nao): 0
+```
+
+**Resultado esperado:**
+```text
+Cadastro realizado!
+Senha gerada: N001
+```
+
+O paciente foi classificado como NORMAL, pois não atende aos critérios de prioridade.
+
+### Exemplo 2 — Cadastro de paciente preferencial
+
+**Entrada:**
+```text
+Genero (M/F/O): F
+Idade: 60
+Esta gestante? (1-Sim / 0-Nao): 0
+E lactante? (1-Sim / 0-Nao): 0
+Possui necessidade especial? (1-Sim / 0-Nao): 0
+Possui condicao de obesidade? (1-Sim / 0-Nao): 0
+```
+
+**Resultado esperado:**
+```text
+Cadastro realizado!
+Senha gerada: P001
+```
+
+A paciente foi classificada como PREFERENCIAL por ser mulher com 60 anos ou mais.
+
+### Exemplo 3 — Cadastro de paciente urgente
+
+**Entrada:**
+```text
+Genero (M/F/O): M
+Idade: 85
+Possui necessidade especial? (1-Sim / 0-Nao): 0
+Possui condicao de obesidade? (1-Sim / 0-Nao): 0
+```
+
+**Resultado esperado:**
+```text
+Cadastro realizado!
+Senha gerada: U001
+```
+
+O paciente foi classificado como URGENTE por possuir mais de 80 anos.
+
+### Exemplo 4 — Ordem de atendimento
+
+Considerando os três pacientes cadastrados nos exemplos anteriores, o sistema deve chamar as senhas nesta ordem:
+
+```text
+1º - U001 - URGENTE
+2º - P001 - PREFERENCIAL
+3º - N001 - NORMAL
+```
+
+Isso demonstra que o sistema respeita a prioridade das filas.
+
+### Exemplo 5 — Painel de atendimento
+
+Após cadastrar os três pacientes e antes de chamar qualquer um, o painel deverá apresentar informações semelhantes a:
+
+```text
+====================================
+       PAINEL DE ATENDIMENTO
+====================================
+Senha atual: Nenhuma
+------------------------------------
+       PACIENTES AGUARDANDO
+------------------------------------
+Urgentes: 1
+Preferenciais: 1
+Normais: 1
+------------------------------------
+         PROXIMAS SENHAS
+------------------------------------
+U001 - URGENTE
+P001 - PREFERENCIAL
+N001 - NORMAL
+====================================
+```
+
+### Exemplo 6 — Finalização de atendimento
+
+Após chamar o paciente U001, o sistema apresenta:
+
+```text
+===== PACIENTE CHAMADO =====
+Senha: U001
+Categoria: URGENTE
+```
+
+Ao selecionar a opção de finalizar atendimento:
+
+```text
+Atendimento da senha U001 finalizado!
+```
+
+O sistema fica disponível para chamar o próximo paciente.
+
+## 6. Estrutura dos arquivos
 
 | Arquivo | Responsabilidade |
 |---|---|
@@ -83,13 +195,13 @@ Ao executar o programa, o usuário encontra as seguintes opções:
 5. Exibir painel.
 0. Sair do sistema.
 
-## 7. Tecnologias utilizadas
+## 8. Tecnologias utilizadas
 
 - Linguagem C.
 - Compilador GCC.
 - Ambiente de desenvolvimento e testes: GDB Online.
 
-## 8. Como executar
+## 9. Como executar
 
 Para compilar o projeto utilizando GCC, execute:
 
@@ -124,7 +236,7 @@ Durante o desenvolvimento foram utilizados:
 - Filas e lógica FIFO.
 - Validação de dados.
 
-## 10. Considerações finais
+## 11. Considerações finais
 
 O projeto demonstra a aplicação dos conceitos fundamentais da linguagem C na construção de um sistema de gerenciamento de atendimentos.
 
