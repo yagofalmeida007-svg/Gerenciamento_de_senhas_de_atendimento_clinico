@@ -130,5 +130,5 @@ O projeto demonstra a aplicação dos conceitos fundamentais da linguagem C na c
 
 A divisão do código em módulos facilita a organização, manutenção e compreensão do programa.
 
-#desenvolvido por
+## desenvolvido por
 Yago Fernandes de Almeida
